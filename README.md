@@ -1,115 +1,116 @@
-# Swisstronik Tesnet Techinal Task 1
+# CryptoPulse
 
-link : [Click!](https://www.swisstronik.com/testnet2/dashboard)
+Welcome to **CryptoPulse**! This project is dedicated to bringing the latest trends and insights from the world of cryptocurrency directly to your fingertips. Whether you're a seasoned trader or a curious newcomer, CryptoPulse has something for everyone.
 
-Feel free donate to my EVM address
+![CryptoPulse](https://example.com/banner.png)
 
-EVM :
+## Table of Contents
 
-```bash
-0x9902C3A98Df4b240ad5496cC26F89bAb8058f4aE
+- [Introduction](#introduction)
+- [Features](#features)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Introduction
+
+CryptoPulse is an open-source platform that provides real-time data, analytics, and news about various cryptocurrencies. Our goal is to help users make informed decisions by providing accurate and up-to-date information.
+
+## Features
+
+- **Real-time Data**: Get live updates on cryptocurrency prices, market caps, and trading volumes.
+- **Historical Data**: Access historical data to analyze trends and patterns.
+- **News Feed**: Stay informed with the latest news and updates from the cryptocurrency world.
+- **Portfolio Management**: Track and manage your crypto investments in one place.
+- **Alerts**: Set up custom alerts for price changes, news updates, and more.
+
+## Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (version 14 or higher)
+- [NPM](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/)
+
+### Installation
+
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/josephc1echantel1g/CryptoPulse.git
+   cd CryptoPulse
+   ```
+
+2. Install the dependencies:
+   ```sh
+   npm install
+   # or
+   yarn install
+   ```
+
+### Running the Project
+
+To start the development server, run:
+```sh
+npm start
+# or
+yarn start
 ```
 
-## Steps
+Open your browser and navigate to `http://localhost:3000` to see CryptoPulse in action.
 
-### 1. Clone Repository
+## Usage
 
-```bash
-git clone https://github.com/Mnuralim/hardhat-deploy-contract.git
-```
+### Fetching Real-time Data
 
-```
-cd hardhat-deploy-contract
-```
+CryptoPulse provides a simple API to fetch real-time cryptocurrency data. Here’s an example of how to use it:
 
-### 2. Install Dependency
+```js
+import { getCryptoData } from './api';
 
-```bash
-npm install
-```
-
-### 3. Set .env File
-
-create .env file in root project
-
-```bash
-PRIVATE_KEY="your private key"
-```
-
-### 4. Create Smart Contract
-
-- Open contract folder
-- Create Hello_swtr.sol file
-- Copy this code and paste there
-
-```
-/// SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.19;
-
-//This contract is only intended for testing purposes
-
-contract Swisstronik {
-    string private message;
-
-    /**
-     * @dev Constructor is used to set the initial message for the contract
-     * @param _message the message to associate with the message variable.
-     */
-    constructor(string memory _message) payable{
-        message = _message;
-    }
-
-    /**
-     * @dev setMessage() updates the stored message in the contract
-     * @param _message the new message to replace the existing one
-     */
-    function setMessage(string memory _message) public {
-        message = _message;
-    }
-
-    /**
-     * @dev getMessage() retrieves the currently stored message in the contract
-     * @return The message associated with the contract
-     */
-    function getMessage() public view returns(string memory){
-        return message;
-    }
+async function fetchData() {
+  const data = await getCryptoData('bitcoin');
+  console.log(data);
 }
+
+fetchData();
 ```
 
-### 5. Compile Smart Contract
+### Managing Your Portfolio
 
-```bash
-npm run compile
+Track your investments by adding them to your portfolio:
+
+```js
+import { addToPortfolio } from './portfolio';
+
+addToPortfolio('bitcoin', 1.5); // Adds 1.5 BTC to your portfolio
 ```
 
-### 6. Deploy Smart Contract
+## Contributing
 
-```bash
-npm run deploy
-```
+We welcome contributions from the community! If you would like to contribute, please follow these steps:
 
-### 7. Get Message
+1. Fork the repository.
+2. Create a new branch:
+   ```sh
+   git checkout -b feature/your-feature-name
+   ```
+3. Make your changes and commit them:
+   ```sh
+   git commit -m "Add your commit message"
+   ```
+4. Push to the branch:
+   ```sh
+   git push origin feature/your-feature-name
+   ```
+5. Open a pull request and describe your changes.
 
-```bash
-npm run get-message
-```
+For more details, please read our [Contributing Guidelines](CONTRIBUTING.md).
 
-### 8. Get Message
+## License
 
-```bash
-npm run set-message
-```
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
 
-### 9. Finsihed
+---
 
-- Open the deployed-adddress.ts (location in utils folder)
-- Copy the address and paste the address in testnet dashboard
-- push this project to your github and paste your repository link in testnet dashboard
+We hope you enjoy using CryptoPulse! If you have any questions, feel free to open an issue or contact us.
 
-by :
-github : [Mnuralim](https://github.com/Mnuralim)
-twitter : @Izzycracker04
-telegram : @fitriay19
-
-//0xf1f0C7Bf19ee4E196C0213cEE1002e9a5fadff62//
